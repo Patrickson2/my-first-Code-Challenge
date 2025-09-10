@@ -1,35 +1,32 @@
-// Prompt the user to enter student marks and convert the input to an intege
-let marks = parseInt(prompt("Enter Student Marks:"));
-
-// Check if the input is not a number and alert the user an invalid input.
-if (isNaN(marks) ) {
-    alert("Invalid Input! Please enter a number between 0 and 100.");
-} else {
-    // Declare a variable to store the grad
-    let grade;
+// the use of a function here is to prompt the user for input and return the marks
+function calculateGrade() {
+    // Prompt the user to enter student marks
+    let Marks = parseInt(prompt("Enter Student Marks:"))
     
-    // Check if marks are between 79 and 100 to be Grade A
-if (marks >= 79 && marks <= 100) {
-        grade = "A";
-        // Check if marks are between 60 and 79 to be Grade B
+    return Marks;
+}
 
-    } else if (marks <79 && marks >= 60){
-        grade = "B";
+// Call calculateGrade() to get the marks
+let Marks = calculateGrade()
+console.log(Marks); // this prints the value of Marks to the console.
+function determineGrade(Marks) {
+        // If input is not a number, return an error message.
+    if (isNaN(Marks)) {
+        return "Invalid Input! Please enter a number between 0 and 100";
 
-        // Check if marks are between 49 and 59 to be Grade C
-    } else if (marks <59 && marks >= 49){
-        grade = "C";
-
-        // Check if marks are between 40 and 49 to be Grade D
-    } else if (marks <49 && marks >= 40) {
-        grade = "D";
-
-        // Check if marks are between 0 and 40 to be Grade E
-    } else if (marks <40 && marks >= 0){
-        grade = "E";
-
+        // Check ranges and returns the correct grade
+    }else if (Marks >= 79 && Marks <= 100) {
+        return "A";
+    } else if (Marks >= 60 && Marks < 79) {
+        return "B";
+    } else if (Marks  >= 49 && Marks < 59) {
+        return "C";
+    } else if (Marks >= 40 && Marks < 49) {
+        return "D";
+    } else if (Marks >= 0 && Marks < 40) {
+        return "E";
     }
 
-// Display the grade to the user
-    alert("The Grade is: " + grade);
-} 
+}
+// Call determineGrade() with the Marks entered by the user and outputs grade
+console.log(determineGrade(Marks))
